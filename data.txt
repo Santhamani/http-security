@@ -1,0 +1,19 @@
+helllo ammu!...
+
+Generate Private Key
+Run this command to generate a 4096-bit private key and output it to the private.pem file. If you like, you may change the key length and/or output file.
+
+$ openssl genrsa 
+Derive Public Key
+Given a private key, you may derive its public key and output it to public.pem using this command. (You may also paste your OpenSSL-generated private key into the form above to get its public key.)
+
+$ openssl rsa -in private.pem -pubout -out public.pem
+Encrypt Data
+We can now use this key pair to encrypt and decrypt a file, data.txt.
+
+$ openssl rsautl -encrypt -inkey public.pem -pubin -in data.txt -out data.txt.enc
+Decrypt Data
+Given the encrypted file from the previous step, you may decrypt it like so.
+
+$ openssl rsautl -decrypt -inkey private.pem -in data.txt.enc -out data.txt
+0hello i am appended text..0hello i am appended text..NaNhello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..hello i am appended text..

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Sorted Tasks | Mettl</title>
+      <script src = "index.js"></script>
+      <link rel="stylesheet" type="text/css" href="index.css">      
+   </head>
+ <script>
+         function addData(data){
+             console.log(data.value);
+             var table = document.getElementById("mytable");
+             var tr = table.insertRow();
+             data.form.querySelectorAll('input').forEach(a => {
+                 var cell = tr.appendChild(document.createElement('td'));
+                 cell.textContent = a.value;
+             });
+         }
+     </script>
+   <body>  
+     <h1  title="hee">Add tasks</h1>
+     <h2 id="error_message_here" title="hee"></h2>
+     
+      <form name = "task_form" >
+        <div>
+          <label>Task ID</label>
+          <input id = "task_id" name = "task_id" type = "number" value="" length = "5" required>
+        </div>
+
+        <div>
+          <label>Date of task</label>
+          <input id = "task_date" name = "task_date" type = "date" value="" label="Date " required>
+        </div>
+        <div>
+          <button id="btn_reset" type="button">Reset table</button>
+          <button id="btn_submit" type="button" onclick="addData(this)">Submit</button>
+        </div>
+      </form>
+
+     <div>
+        <table id="mytable" >
+          <tr>
+            <th>Date </th>
+            <th>Task ID </th>
+          </tr>
+        </table>
+     </div>
+    
+   </body>
+</html>
